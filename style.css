@@ -1,0 +1,250 @@
+/* Universal Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #800000;
+}
+
+body {
+    background: linear-gradient(135deg, bisque 0%, #f5e6cc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Input Fields */
+.text {
+    margin-left: 10px;
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 8px;
+    border: 2px solid #800000;
+    border-radius: 6px;
+    width: 160px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.text:focus {
+    outline: none;
+    border-color: #a52a2a;
+    box-shadow: 0 0 8px rgba(165, 42, 42, 0.4);
+    transform: scale(1.02);
+}
+
+/* Specific Input Adjustments */
+#height {
+    margin-bottom: 15px;
+}
+
+#weight {
+    margin-bottom: 30px;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background: rgba(255, 245, 238, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading with Interactive Hover */
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #800000, #a52a2a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(128, 0, 0, 0.3);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.05);
+    text-shadow: 3px 3px 6px rgba(128, 0, 0, 0.5);
+}
+
+/* Form Styling */
+form {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(180deg, #fff8e7 0%, antiquewhite 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels with Interactive Animation */
+label {
+    margin-right: 10px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+label:hover {
+    color: #a52a2a;
+    transform: translateX(5px);
+}
+
+/* Button Styling with Pulse Animation */
+.button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: linear-gradient(45deg, #800000, #a52a2a);
+    color: bisque;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.button:hover {
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(45deg, #a52a2a, #800000);
+    box-shadow: 0 6px 16px rgba(128, 0, 0, 0.4);
+    animation: none;
+}
+
+.button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(128, 0, 0, 0.2);
+}
+
+/* Results Section with Hover Effect */
+#results {
+    font-size: 32px;
+    margin-top: 25px;
+    font-weight: 700;
+    color: #800000;
+    background: rgba(255, 245, 238, 0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    animation: slideUp 0.5s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+#results:hover {
+    background: rgba(255, 245, 238, 1);
+    transform: translateY(-3px);
+}
+
+/* Weight Guide with Custom Bullet Points */
+#weight-guide {
+    margin-top: 20px;
+    font-size: 16px;
+    background: antiquewhite;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-left: 4px solid #800000;
+    width: 100%;
+}
+
+/* Style paragraphs inside weight-guide as bullet points */
+#weight-guide p {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+#weight-guide p:before {
+    content: '\2022';
+    position: absolute;
+    left: 10px;
+    color: #800000;
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#weight-guide p:hover {
+    transform: translateX(5px);
+    color: #a52a2a;
+}
+
+#weight-guide p:hover:before {
+    transform: scale(1.3);
+    color: #a52a2a;
+}
+
+/* Subheading */
+h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #800000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    form {
+        padding: 15px;
+    }
+    
+    .text {
+        width: 120px;
+        font-size: 14px;
+    }
+    
+    .button {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+    
+    #results {
+        font-size: 24px;
+    }
+    
+    #weight-guide {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
